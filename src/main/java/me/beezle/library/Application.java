@@ -7,11 +7,8 @@ import de.codeshelf.consoleui.prompt.ListResult;
 import de.codeshelf.consoleui.prompt.PromtResultItemIF;
 import jline.TerminalFactory;
 import me.beezle.library.prompts.*;
-import me.beezle.library.ui.TerminalFrame;
 import me.beezle.library.util.*;
 import org.fusesource.jansi.AnsiConsole;
-
-import javax.swing.*;
 import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -404,10 +401,9 @@ public class Application
 
     public int askForAccessLevel()
     {
-        int al = 0;
         try
         {
-            al = promptChangeAccessLevel();
+            int al = promptChangeAccessLevel();
             if (al < 1 || al > 2) throw new NumberFormatException();
             return al;
         } catch (NumberFormatException ex) {
